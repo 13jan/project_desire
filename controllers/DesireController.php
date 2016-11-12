@@ -29,18 +29,22 @@ class DesireController extends Controller
         ];
     }
 
+
     /**
      * Lists all Desire models.
      * @return mixed
      */
-    public function actionIndex()
+    public function actionIndex($id)
     {
         $searchModel = new DesireSearch();
-        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams,$id);
+
+        //Desire::find()->where(['id_campaigns' => 123]);
 
         return $this->render('index', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
+            'id_campaigns' => $id,
         ]);
     }
 
@@ -61,9 +65,11 @@ class DesireController extends Controller
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
-    public function actionCreate()
+    public function actionCreate($id)
     {
         $model = new Desire();
+
+        $model->id_campaigns = $id;
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);

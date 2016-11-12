@@ -39,9 +39,9 @@ class DesireSearch extends Desire
      *
      * @return ActiveDataProvider
      */
-    public function search($params)
+    public function search($params,$id)
     {
-        $query = Desire::find();
+        $query = Desire::find()->where(['id_campaigns' => $id]);
 
         // add conditions that should always apply here
 

@@ -7,7 +7,7 @@ use yii\widgets\DetailView;
 /* @var $model app\models\Desire */
 
 $this->title = $model->name;
-$this->params['breadcrumbs'][] = ['label' => 'Desires', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'Desires', 'url' => ['index?id='.$model->id_campaigns]];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="desire-view">
