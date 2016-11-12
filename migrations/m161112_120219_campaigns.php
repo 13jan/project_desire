@@ -22,8 +22,8 @@ class m161112_120219_campaigns extends Migration
 			'fk_campaigns_creater', //название
 			'campaigns', //название таблицы
 			'id_creator', //Поле для связи во что тащим
-			'user' //откуда тащим
-			'id' //поле которое тащим
+			'user', //откуда тащим
+			'id', //поле которое тащим
 			'CASCADE'
 		);					
     }
