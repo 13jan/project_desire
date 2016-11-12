@@ -7,7 +7,7 @@ use yii\grid\GridView;
 /* @var $searchModel app\models\CampaignsSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Campaigns';
+$this->title = 'Кампании';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="campaigns-index">
@@ -16,18 +16,21 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a('Create Campaigns', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Создать кампанию', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
+
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'id',
-            'name',
+            [
+                'attribute'=>'name',
+                'label'=>'Название кампании',
+            ],
             'description:ntext',
-            'id_creator',
+
             'name_contact',
             // 'contact',
             // 'date_created',

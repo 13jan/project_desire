@@ -48,10 +48,10 @@ class Desire extends \yii\db\ActiveRecord
         return [
             'id' => 'ID',
             'id_campaigns' => 'Id Campaigns',
-            'name' => 'Name',
-            'number' => 'Number',
-            'comment' => 'Comment',
-            'number_solved' => 'Number Solved',
+            'name' => 'Название',
+            'number' => 'Количество',
+            'comment' => 'Описание',
+            'number_solved' => 'Число выполненых',
         ];
     }
 

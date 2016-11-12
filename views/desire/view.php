@@ -7,7 +7,7 @@ use yii\widgets\DetailView;
 /* @var $model app\models\Desire */
 
 $this->title = $model->name;
-$this->params['breadcrumbs'][] = ['label' => 'Desires', 'url' => ['index?id='.$model->id_campaigns]];
+$this->params['breadcrumbs'][] = ['label' => 'Желание', 'url' => ['index?id='.$model->id_campaigns]];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="desire-view">
@@ -15,11 +15,11 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Update', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
-        <?= Html::a('Delete', ['delete', 'id' => $model->id], [
+        <?= Html::a('Изменить', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
+        <?= Html::a('Удалить', ['delete', 'id' => $model->id], [
             'class' => 'btn btn-danger',
             'data' => [
-                'confirm' => 'Are you sure you want to delete this item?',
+                'confirm' => 'Вы уверены, что хотите удалить этот элемент?',
                 'method' => 'post',
             ],
         ]) ?>
@@ -28,10 +28,22 @@ $this->params['breadcrumbs'][] = $this->title;
     <?= DetailView::widget([
         'model' => $model,
         'attributes' => [
-            'id',
-            'name',
-            'number',
-            'comment:ntext',
+            //'id',
+            //'name',
+			[ 
+				'attribute'=>'name', 
+				'label'=>'Название кампании', 
+			], 
+            //'number',
+			[ 
+				'attribute'=>'number', 
+				'label'=>'Количество', 
+			], 
+            //'comment:ntext',
+			[ 
+				'attribute'=>'comment', 
+				'label'=>'Описание', 
+			],
         ],
     ]) ?>
 

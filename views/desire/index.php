@@ -7,7 +7,7 @@ use yii\grid\GridView;
 /* @var $searchModel app\models\DesireSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Desires';
+$this->title = 'Желание';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="desire-index">
@@ -17,19 +17,25 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <p>
         <?php $create = 'create?id='.$id_campaigns; ?>
-        <?= Html::a('Create Desire', [$create], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Создать желание', [$create], ['class' => 'btn btn-success']) ?>
     </p>
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
+			//'name',
+            [ 
+				'attribute'=>'name', 
+				'label'=>'Название кампании', 
+			], 
+            //'number',
+			[ 
+				'attribute'=>'number', 
+				'label'=>'Количество', 
+			], 
+            //'comment:ntext',
 
-            'id',
-     
-            'name',
-            'number',
-            'comment:ntext',
             // 'number_solved',
 
             ['class' => 'yii\grid\ActionColumn'],
