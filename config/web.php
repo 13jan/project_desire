@@ -25,10 +25,6 @@ $config = [
         'cache' => [
             'class' => 'yii\caching\FileCache',
         ],
-        'user' => [
-            'identityClass' => 'app\models\User',
-            'enableAutoLogin' => true,
-        ],
         'errorHandler' => [
             'errorAction' => 'site/error',
         ],
@@ -53,7 +49,7 @@ $config = [
             'showScriptName' => false,
             'rules' => array(
                 '' => 'site/index',
-                'login' => 'user/security/login'
+                //'login' => 'user/security/login'
             ),
         ),
         'db' => require(__DIR__ . '/db.php'),
