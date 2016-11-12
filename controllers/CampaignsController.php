@@ -35,12 +35,16 @@ class CampaignsController extends Controller
      */
     public function actionIndex()
     {
+
+        $user_id = Yii::$app->user->getId();
+
         $searchModel = new CampaignsSearch();
-        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams,$user_id);
 
         return $this->render('index', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
+
         ]);
     }
 
@@ -84,6 +88,13 @@ class CampaignsController extends Controller
     {
         $model = $this->findModel($id);
 
+        $user_id = Yii::$app->user->getId();
+
+        if($user_id != $model->id_creator){
+            return $this->redirect(['/campaigns']);
+        }
+
+
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
@@ -101,6 +112,13 @@ class CampaignsController extends Controller
      */
     public function actionDelete($id)
     {
+
+        $user_id = Yii::$app->user->getId();
+
+        if($user_id != $this->findModel($id)->id_creator){
+            return $this->redirect(['/campaigns']);
+        }
+
         $this->findModel($id)->delete();
 
         return $this->redirect(['index']);

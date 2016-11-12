@@ -39,9 +39,9 @@ class CampaignsSearch extends Campaigns
      *
      * @return ActiveDataProvider
      */
-    public function search($params)
+    public function search($params,$id)
     {
-        $query = Campaigns::find();
+        $query = Campaigns::find()->where(['id_creator' => $id]);
 
         // add conditions that should always apply here
 

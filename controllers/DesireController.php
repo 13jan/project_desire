@@ -5,6 +5,7 @@ namespace app\controllers;
 use Yii;
 use app\models\Desire;
 use app\models\DesireSearch;
+use app\models\Campaigns;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -67,6 +68,17 @@ class DesireController extends Controller
      */
     public function actionCreate($id)
     {
+
+        $my_user_id = Yii::$app->user->getId();
+
+        $myModel = Campaigns::findOne($id);
+
+        $id_user = $myModel->id_creator;
+
+        if($id_user != $my_user_id){
+            return $this->redirect(['/campaigns']);
+        }
+
         $model = new Desire();
 
         $model->id_campaigns = $id;
@@ -90,6 +102,17 @@ class DesireController extends Controller
      */
     public function actionUpdate($id)
     {
+
+        $my_user_id = Yii::$app->user->getId();
+
+        $myModel = Campaigns::findOne($id);
+
+        $id_user = $myModel->id_creator;
+
+        if($id_user != $my_user_id){
+            return $this->redirect(['/campaigns']);
+        }
+
         $model = $this->findModel($id);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
@@ -109,6 +132,17 @@ class DesireController extends Controller
      */
     public function actionDelete($id)
     {
+
+        $my_user_id = Yii::$app->user->getId();
+
+        $myModel = Campaigns::findOne($id);
+
+        $id_user = $myModel->id_creator;
+
+        if($id_user != $my_user_id){
+            return $this->redirect(['/campaigns']);
+        }
+
         $this->findModel($id)->delete();
 
         return $this->redirect(['index']);
