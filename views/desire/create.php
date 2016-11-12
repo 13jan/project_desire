@@ -7,7 +7,7 @@ use yii\helpers\Html;
 /* @var $model app\models\Desire */
 
 $this->title = 'Добавить желание';
-$this->params['breadcrumbs'][] = ['label' => 'Желание', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'Желания', 'url' => ['index?id='.$model->id_campaigns]];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="desire-create">

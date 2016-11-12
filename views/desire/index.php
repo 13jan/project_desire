@@ -7,7 +7,7 @@ use yii\grid\GridView;
 /* @var $searchModel app\models\DesireSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Желание';
+$this->title = 'Желания';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="desire-index">

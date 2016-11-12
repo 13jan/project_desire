@@ -6,7 +6,7 @@ use yii\helpers\Html;
 /* @var $model app\models\Desire */
 
 $this->title = 'Изменить желание: ' . $model->name;
-$this->params['breadcrumbs'][] = ['label' => 'Желание', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'Желания', 'url' => ['index?id='.$model->id_campaigns]];
 $this->params['breadcrumbs'][] = ['label' => $model->name, 'url' => ['view', 'id' => $model->id]];
 $this->params['breadcrumbs'][] = 'Изменить';
 ?>
