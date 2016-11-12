@@ -1,13 +1,15 @@
 <?php
 
 use yii\db\Migration;
+use yii\db\Schema;
+
 
 class m161112_120219_campaigns extends Migration
 {
     public function up()
     {
-		$this->create_Table('campaigns', [
-			'id'=>Schema::TYPE_PK,
+		$this->createTable('campaigns', [
+			'id' => Schema::TYPE_PK,
 			'name'=>Schema::TYPE_STRING . ' NOT NULL',
 			'description'=>Schema::TYPE_TEXT,
 			'id_creator'=>Schema::TYPE_INTEGER,
