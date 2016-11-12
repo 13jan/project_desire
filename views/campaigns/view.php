@@ -34,10 +34,14 @@ $this->params['breadcrumbs'][] = $this->title;
             'id_creator',
             'name_contact',
             'contact',
-            'date_created',
+            [
+                'label' => 'date_created',
+                'value' => Yii::$app->formatter->asDate($model->date_created)
+            ],
+            //'date_created',
             'date_end',
             'photo',
         ],
     ]) ?>
-
+    echo
 </div>
