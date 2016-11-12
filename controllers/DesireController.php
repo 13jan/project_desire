@@ -71,6 +71,8 @@ class DesireController extends Controller
 
         $model->id_campaigns = $id;
 
+        $model->number_solved = 0;
+
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
