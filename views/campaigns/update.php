@@ -5,10 +5,10 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\Campaigns */
 
-$this->title = 'Update Campaigns: ' . $model->name;
-$this->params['breadcrumbs'][] = ['label' => 'Campaigns', 'url' => ['index']];
+$this->title = 'Изменить кампанию: ' . $model->name;
+$this->params['breadcrumbs'][] = ['label' => 'Кампании', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->name, 'url' => ['view', 'id' => $model->id]];
-$this->params['breadcrumbs'][] = 'Update';
+$this->params['breadcrumbs'][] = 'Изменить';
 ?>
 <div class="campaigns-update">
 

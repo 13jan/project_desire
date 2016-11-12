@@ -7,7 +7,7 @@ use yii\widgets\DetailView;
 /* @var $model app\models\Campaigns */
 
 $this->title = $model->name;
-$this->params['breadcrumbs'][] = ['label' => 'Campaigns', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'Кампании', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="campaigns-view">
@@ -15,11 +15,11 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Update', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
-        <?= Html::a('Delete', ['delete', 'id' => $model->id], [
+        <?= Html::a('Обновить', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
+        <?= Html::a('Удалить', ['delete', 'id' => $model->id], [
             'class' => 'btn btn-danger',
             'data' => [
-                'confirm' => 'Are you sure you want to delete this item?',
+                'confirm' => 'Вы уверены, что хотите удалить эту кампанию? Восстановить её будет невозможно.',
                 'method' => 'post',
             ],
         ]) ?>
@@ -28,20 +28,26 @@ $this->params['breadcrumbs'][] = $this->title;
     <?= DetailView::widget([
         'model' => $model,
         'attributes' => [
-            'id',
+            //'id',
             'name',
             'description:ntext',
-            'id_creator',
+            //'id_creator',
             'name_contact',
-            'contact',
             [
-                'label' => 'date_created',
+                'attribute'=>'contact',
+                'label'=>'Контакт',
+            ],
+            [
+                'attribute'=>'date_created',
+                'label' => 'Дата создания',
                 'value' => Yii::$app->formatter->asDate($model->date_created)
             ],
-            //'date_created',
-            'date_end',
+            [
+                'attribute'=>'date_end',
+                'label' => 'Дата завершения',
+                'value' => Yii::$app->formatter->asDate($model->date_end)
+            ],
             'photo',
         ],
     ]) ?>
-    echo
 </div>

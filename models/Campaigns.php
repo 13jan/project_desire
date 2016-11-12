@@ -78,14 +78,14 @@ class Campaigns extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'name' => 'Name',
-            'description' => 'Description',
+            'name' => 'Название компании',
+            'description' => 'Описание',
             'id_creator' => 'Id Creator',
-            'name_contact' => 'Name Contact',
-            'contact' => 'Contact',
-            'date_created' => 'Date Created',
-            'date_end' => 'Date End',
-            'photo' => 'Photo',
+            'name_contact' => 'Контактное лицо',
+            'contact' => 'Контактные данные',
+            'date_created' => 'Дата создания',
+            'date_end' => 'Дата завершения',
+            'photo' => 'Фото',
         ];
     }
 
