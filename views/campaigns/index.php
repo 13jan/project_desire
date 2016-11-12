@@ -7,38 +7,50 @@ use yii\grid\GridView;
 /* @var $searchModel app\models\CampaignsSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Кампании';
+$this->title = 'Мои кампании';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="campaigns-index">
 
-    <h1><?= Html::encode($this->title) ?></h1>
-    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
+<section id="inner-headline">
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <h2 class="pageTitle"><?= Html::encode($this->title) ?></h2>
+        </div>
+    </div>
 
-    <p>
-        <?=$ee; ?>
-        <?= Html::a('Создать кампанию', ['create'], ['class' => 'btn btn-success']) ?>
-    </p>
+</div>
+</section>
+<br><br>
+<div class="container">
+    <div class="campaigns-index">
 
-    <?= GridView::widget([
-        'dataProvider' => $dataProvider,
-        'filterModel' => $searchModel,
-        'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
+        <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
-            [
-                'attribute'=>'name',
-                'label'=>'Название кампании',
+        <p>
+            <?= Html::a('Создать кампанию', ['create'], ['class' => 'btn btn-success']) ?>
+        </p>
+
+        <?= GridView::widget([
+            'dataProvider' => $dataProvider,
+            'filterModel' => $searchModel,
+            'columns' => [
+                ['class' => 'yii\grid\SerialColumn'],
+
+                [
+                    'attribute'=>'name',
+                    'label'=>'Название кампании',
+                ],
+                'description:ntext',
+
+                'name_contact',
+                // 'contact',
+                // 'date_created',
+                // 'date_end',
+                // 'photo',
+
+                ['class' => 'yii\grid\ActionColumn'],
             ],
-            'description:ntext',
-
-            'name_contact',
-            // 'contact',
-            // 'date_created',
-            // 'date_end',
-            // 'photo',
-
-            ['class' => 'yii\grid\ActionColumn'],
-        ],
-    ]); ?>
+        ]); ?>
+    </div>
 </div>
