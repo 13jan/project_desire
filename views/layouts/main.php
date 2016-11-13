@@ -39,6 +39,7 @@ AppAsset::register($this);
 
 </head>
 <body>
+<?php $this->beginBody() ?>
 <div id="wrapper" class="home-page">
     <!-- start header -->
     <header>
@@ -170,6 +171,7 @@ AppAsset::register($this);
 <script src="/js/owl-carousel/owl.carousel.js"></script>
 <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
 
+<?php $this->endBody() ?>
 </body>
 </html>
 <?php $this->endPage() ?>
