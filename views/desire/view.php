@@ -48,5 +48,32 @@ $this->params['breadcrumbs'][] = $this->title;
         ],
     ]) ?>
 
+    <div class="box">
+        <div class="box-header">
+          <h3 class="box-title">Резервирование</h3>
+        </div>
+        <!-- /.box-header -->
+        <div class="box-body no-padding">
+          <table class="table table-striped">
+            <tr>
+              <th style="width: 10px">#</th>
+              <th>Пользователь</th>
+              <th>Зарезервировал</th>
+              <th>Выполнил</th>
+              <th> </th>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td><a href="/ссылка-на-юзера">user_name</a></td>
+              <td>10</td>
+              <td><input class="form-control" type="number" max="10" min="0" value="0"></td>
+              <td><button class="btn btn-sm btn-success">Подтвердить</button></td>
+            </tr>
+          </table>
+        </div>
+        <!-- /.box-body -->
+      </div>
+
+
     </div>
 </div>
