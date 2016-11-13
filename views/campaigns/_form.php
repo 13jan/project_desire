@@ -1,7 +1,9 @@
 <?php
 
+
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+
 
 /* @var $this yii\web\View */
 /* @var $model app\models\Campaigns */
@@ -10,7 +12,7 @@ use yii\widgets\ActiveForm;
 
 <div class="campaigns-form">
 
-    <?php $form = ActiveForm::begin(); ?>
+    <?php $form = ActiveForm::begin(['options' => ['enctype' => 'multipart/form-data']]); ?>
 
     <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
 
@@ -26,7 +28,9 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'date_end')->textInput() ?>
 
-    <?= $form->field($model, 'photo')->textInput(['maxlength' => true]) ?>
+    <?//= $form->field($model, 'photo')->textInput(['maxlength' => true]) ?>
+	
+	<?= $form->field($model, 'photo')->fileInput() ?>
 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Создать' : 'Обновить', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>

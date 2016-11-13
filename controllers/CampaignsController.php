@@ -53,6 +53,21 @@ class CampaignsController extends Controller
         ]);
     }
 
+	/*Обработка добавления фото*/
+	 public function actionUpload()
+    {
+        $model = new UploadForm();
+
+        if (Yii::$app->request->isPost) {
+            $model->imageFile = UploadedFile::getInstance($model, 'photo');
+            if ($model->upload()) {
+                // file is uploaded successfully
+                return;
+            }
+        }
+
+        return $this->render('upload', ['model' => $model]);
+    }
     /**
      * Displays a single Campaigns model.
      * @param integer $id

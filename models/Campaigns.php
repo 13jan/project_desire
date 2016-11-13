@@ -68,6 +68,7 @@ class Campaigns extends \yii\db\ActiveRecord
             [['id_creator', 'date_created', 'date_end'], 'integer'],
             [['name', 'name_contact', 'contact', 'photo'], 'string', 'max' => 255],
             [['id_creator'], 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['id_creator' => 'id']],
+			[['photo'], 'file', 'skipOnEmpty' => false, 'extensions' => 'png, jpg'],
         ];
     }
 
@@ -88,7 +89,17 @@ class Campaigns extends \yii\db\ActiveRecord
             'photo' => 'Фото',
         ];
     }
-
+	
+	//Обработка загрузки фото
+	public function upload()
+    {
+        if ($this->validate()) {
+            $this->imageFile->saveAs('uploads/' . $this->imageFile->baseName . '.' . $this->imageFile->extension);
+            return true;
+        } else {
+            return false;
+        }
+    }
     /**
      * @return \yii\db\ActiveQuery
      */
