@@ -12,33 +12,35 @@ $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="desire-index">
 
-    <h1><?= Html::encode($this->title) ?></h1>
-    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
+        <h1><?= Html::encode($this->title) ?></h1>
+        <div class="container">
+            <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
-    <p>
-        <?php $create = 'create?id='.$id_campaigns; ?>
-        <?= Html::a('Создать желание', [$create], ['class' => 'btn btn-success']) ?>
-    </p>
-    <?= GridView::widget([
-        'dataProvider' => $dataProvider,
-        'filterModel' => $searchModel,
-        'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
-			//'name',
-            [ 
-				'attribute'=>'name', 
-				'label'=>'Желание', 
-			], 
-            //'number',
-			[ 
-				'attribute'=>'number', 
-				'label'=>'Количество', 
-			], 
-            //'comment:ntext',
+            <p>
+                <?php $create = 'create?id='.$id_campaigns; ?>
+                <?= Html::a('Создать желание', [$create], ['class' => 'btn btn-success']) ?>
+            </p>
+            <?= GridView::widget([
+                'dataProvider' => $dataProvider,
+                'filterModel' => $searchModel,
+                'columns' => [
+                    ['class' => 'yii\grid\SerialColumn'],
+        			//'name',
+                    [ 
+        				'attribute'=>'name', 
+        				'label'=>'Желание', 
+        			], 
+                    //'number',
+        			[ 
+        				'attribute'=>'number', 
+        				'label'=>'Количество', 
+        			], 
+                    //'comment:ntext',
 
-            // 'number_solved',
+                    // 'number_solved',
 
-            ['class' => 'yii\grid\ActionColumn'],
-        ],
-    ]); ?>
+                    ['class' => 'yii\grid\ActionColumn'],
+                ],
+            ]); ?>
+        </div>
 </div>
