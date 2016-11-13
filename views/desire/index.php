@@ -27,7 +27,7 @@ $this->params['breadcrumbs'][] = $this->title;
 			//'name',
             [ 
 				'attribute'=>'name', 
-				'label'=>'Название кампании', 
+				'label'=>'Желание', 
 			], 
             //'number',
 			[ 
