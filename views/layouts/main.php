@@ -13,7 +13,7 @@ AppAsset::register($this);
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="<?= Yii::$app->language ?>">
 <head>
 <meta charset="<?= Yii::$app->charset ?>">
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -109,14 +109,6 @@ AppAsset::register($this);
 <!-- javascript
     ================================================== -->
 
-<script src="/js/jquery.fancybox.pack.js"></script>
-<script src="/js/jquery.fancybox-media.js"></script> 
-<script src="/js/portfolio/jquery.quicksand.js"></script>
-<script src="/js/portfolio/setting.js"></script>
-<script src="/js/jquery.flexslider.js"></script>
-<script src="/js/animate.js"></script>
-<script src="/js/custom.js"></script>
-<script src="/js/owl-carousel/owl.carousel.js"></script>
 <script src="/js/custom.js"></script>
 
 <?php $this->endBody() ?>
