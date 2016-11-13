@@ -10,8 +10,6 @@ use yii\widgets\Pjax;
 $this->title = 'Campaigns';
 $this->params['breadcrumbs'][] = $this->title;
 
-
-
 $rows = (new \yii\db\Query())
     ->from('campaigns')
     ->limit($pages)
@@ -33,7 +31,7 @@ $rows = (new \yii\db\Query())
 
 <section id="content">
 
-    <?php// Pjax::begin(); ?>
+    <?php Pjax::begin(); ?>
     
     <div class="container">
         <div id="products" class="row list-group">
@@ -57,7 +55,7 @@ $rows = (new \yii\db\Query())
                         <!-- /.box-body -->
                         <div class="box-footer">
                             <span class="direct-chat-timestamp pull-left" style="font-size: 16px;">до 15.11.2016</span>
-                            <button type="submit" class="btn btn-info pull-right">Подробнее</button>
+                            <a href="/camp/view?id=<?=$item['id'];?>" class="btn btn-info pull-right">Подробнее</a>
                         </div>
                         <!-- /.box-footer -->
                     </form>
@@ -80,7 +78,7 @@ $rows = (new \yii\db\Query())
     </div>
 </section>
 
-<?php// Pjax::end(); ?>
+<?php Pjax::end(); ?>
 
 
 </div>
