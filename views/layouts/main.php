@@ -15,11 +15,12 @@ AppAsset::register($this);
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<title>Industry Bootstrap Corporate Web Template</title>
+<meta charset="<?= Yii::$app->charset ?>">
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="description" content="" />
-<meta name="author" content="http://webthemez.com" />
+<?= Html::csrfMetaTags() ?>
+<title><?= Html::encode($this->title) ?></title>
+<?php $this->head() ?>
 <!-- css -->
 <link href="/css/bootstrap.min.css" rel="stylesheet" />
 <link rel="stylesheet" href="simple-line-icons/css/simple-line-icons.css">
