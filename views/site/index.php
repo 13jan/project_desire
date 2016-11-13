@@ -16,40 +16,6 @@ $this->title = 'My Yii Application';
             </div>
         </div>
     </div>
- <!-- <section id="banner">
-   <div id="main-slider" class="flexslider">
-        <ul class="slides">
-          <li>
-            <img src="img/slides/1.jpg" alt="" />
-                 <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-            <div class="flex-caption">
-                <h3>Подари мечту</h3> 
-                <p>Осуществить мечту ребёнка - это просто!<br>Участвуйте в благотворительных кампаниях <br>или организуйте свои.</p>  
-                <button class="btn btn-block btn-warning btn-lg" type="button" style="float: left;width:50%">Подробнее</button>
-            </div>
-             </div>
-        </div>
-    </div>
-          </li>
-          <li>
-            <img src="img/slides/2.jpg" alt="" />
-             <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-            <div class="flex-caption">
-                <h3>manufacturing</h3> 
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elitincidunt.</p>  
-            </div>
-             </div>
-        </div>
-    </div>
-          </li>
-        </ul>
-    </div>
-    
--->
 
 </section>
 <section class="jumbobox">
