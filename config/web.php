@@ -22,6 +22,18 @@ $config = [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
             'cookieValidationKey' => 'V5wLl65VVDLfiinDdIs4EYwtDy8DJ7cK',
         ],
+        'authClientCollection' => [
+            'class'   => \yii\authclient\Collection::className(),
+            'clients' => [
+                // here is the list of clients you want to use
+                // you can read more in the "Available clients" section
+                'vkontakte' => [
+                    'class'        => 'dektrium\user\clients\VKontakte',
+                    'clientId'     => '5726438',
+                    'clientSecret' => 'M8zneKWPPEsXIb4iNmJL',
+                ]
+
+        ]],
         'cache' => [
             'class' => 'yii\caching\FileCache',
         ],

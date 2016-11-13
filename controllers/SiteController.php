@@ -13,7 +13,6 @@ class SiteController extends Controller
 {
     //public $layout = "main_old";
 
-    //public $layout = 'landing';
     public function behaviors()
     {
         return [

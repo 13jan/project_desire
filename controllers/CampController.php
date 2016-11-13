@@ -4,6 +4,7 @@ namespace app\controllers;
 
 use Yii;
 use app\models\Campaigns;
+use app\models\Applications;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -60,6 +61,29 @@ class CampController extends Controller
         return $this->render('view', [
             'model' => $this->findModel($id),
         ]);
+    }
+
+    public function actionAdd(){
+
+        $request->post();
+
+        return $this->render('index', [
+            'test' => $request->post(),
+
+        ]);
+
+        /*
+        $posts);
+
+
+        foreach ($posts as $post){
+
+        }
+
+        $model = new Applications();
+
+        */
+
     }
 
 
