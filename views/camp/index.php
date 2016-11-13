@@ -66,15 +66,17 @@ $rows = (new \yii\db\Query())
 
             <?php endforeach; ?>
 
+            </div>
+        </div>
+
+
+
+    </div>
+    <div class="container">
+        <div class="row">
             <div class="col-xs-12 col-lg-offset-4 col-lg-4" style="margin-top: 50px;">
                 <?= Html::a('Обновить', ['camp/index', 'p' => $pages+3], ['class' => 'btn btn-block btn-warning btn-lg']) ?>
-            
-
         </div>
-    </div>
-
-
-
     </div>
 </section>
 
