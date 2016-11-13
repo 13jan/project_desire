@@ -14,6 +14,7 @@ use yii\filters\VerbFilter;
  */
 class CampaignsController extends Controller
 {
+
     /**
      * @inheritdoc
      */
@@ -35,6 +36,10 @@ class CampaignsController extends Controller
      */
     public function actionIndex()
     {
+
+        if(Yii::$app->user->isGuest){
+            return $this->redirect(['/']);
+        }
 
         $user_id = Yii::$app->user->getId();
 
@@ -67,6 +72,10 @@ class CampaignsController extends Controller
      */
     public function actionCreate()
     {
+        if(Yii::$app->user->isGuest){
+            return $this->redirect(['/']);
+        }
+
         $model = new Campaigns();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
@@ -86,6 +95,10 @@ class CampaignsController extends Controller
      */
     public function actionUpdate($id)
     {
+        if(Yii::$app->user->isGuest){
+            return $this->redirect(['/']);
+        }
+
         $model = $this->findModel($id);
 
         $user_id = Yii::$app->user->getId();
@@ -112,6 +125,10 @@ class CampaignsController extends Controller
      */
     public function actionDelete($id)
     {
+
+        if(Yii::$app->user->isGuest){
+            return $this->redirect(['/']);
+        }
 
         $user_id = Yii::$app->user->getId();
 

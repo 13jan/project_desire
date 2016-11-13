@@ -34,9 +34,15 @@ class DesireController extends Controller
     /**
      * Lists all Desire models.
      * @return mixed
+     * @param integer $id
      */
     public function actionIndex($id)
     {
+
+        if(Yii::$app->user->isGuest){
+            return $this->redirect(['/']);
+        }
+
         $searchModel = new DesireSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams,$id);
 
@@ -64,10 +70,14 @@ class DesireController extends Controller
     /**
      * Creates a new Desire model.
      * If creation is successful, the browser will be redirected to the 'view' page.
+     * @param integer $id
      * @return mixed
      */
     public function actionCreate($id)
     {
+        if(Yii::$app->user->isGuest){
+            return $this->redirect(['/']);
+        }
 
         $my_user_id = Yii::$app->user->getId();
 
@@ -102,6 +112,9 @@ class DesireController extends Controller
      */
     public function actionUpdate($id)
     {
+        if(Yii::$app->user->isGuest){
+            return $this->redirect(['/']);
+        }
 
         $my_user_id = Yii::$app->user->getId();
 
@@ -132,6 +145,10 @@ class DesireController extends Controller
      */
     public function actionDelete($id)
     {
+
+        if(Yii::$app->user->isGuest){
+            return $this->redirect(['/']);
+        }
 
         $my_user_id = Yii::$app->user->getId();
 
