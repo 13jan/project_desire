@@ -4,10 +4,20 @@
 
 $this->title = 'My Yii Application';
 ?>
- <section id="banner">
-
-<!-- Slider -->
-    <div id="main-slider" class="flexslider">
+<div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12" style="padding: 0;">
+                <img src="img/slides/1.jpg" style="width: 100%;background-size: cover;">
+                <div class="wr">
+                  <h1>Подари мечту</h1>
+                  <p style="color: #fff;">Осуществить мечту ребёнка - это просто!<br>Участвуйте в благотворительных кампаниях <br>или организуйте свои.</p>  
+                  <button class="btn btn-block btn-warning btn-lg" type="button">Подробнее</button>
+                </div>
+            </div>
+        </div>
+    </div>
+ <!-- <section id="banner">
+   <div id="main-slider" class="flexslider">
         <ul class="slides">
           <li>
             <img src="img/slides/1.jpg" alt="" />
@@ -39,7 +49,7 @@ $this->title = 'My Yii Application';
         </ul>
     </div>
     
-<!-- end slider -->
+-->
 
 </section>
 <section class="jumbobox">
@@ -59,10 +69,10 @@ $this->title = 'My Yii Application';
 
 <div class="container">
     <div id="products" class="row list-group">
-        <div class="item col-xs-4 col-lg-4">
+        <div class="item col-xs-12 col-md-6 col-lg-4">
             <div class="box box-info">
                 <div class="box-header with-border">
-                    <img src="img/campaigns/01.jpg" alt="">
+                    <img src="img/campaigns/01.jpg" alt="" style="width: 100%;">
                 </div>
                 <!-- /.box-header -->
                 <!-- form start -->
@@ -82,10 +92,10 @@ $this->title = 'My Yii Application';
                 </form>
               </div>
             </div>
-         <div class="item col-xs-4 col-lg-4">
+         <div class="item col-xs-12 col-md-6 col-lg-4">
             <div class="box box-info">
                 <div class="box-header with-border">
-                    <img src="img/campaigns/02.jpg" alt="">
+                    <img src="img/campaigns/02.jpg" alt="" style="width: 100%;">
                 </div>
                 <!-- /.box-header -->
                 <!-- form start -->
@@ -105,10 +115,10 @@ $this->title = 'My Yii Application';
                 </form>
               </div>
             </div>
-        <div class="item col-xs-4 col-lg-4">
+        <div class="item col-xs-12 col-md-6 col-lg-4">
             <div class="box box-info">
                 <div class="box-header with-border">
-                    <img src="img/campaigns/03.jpg" alt="">
+                    <img src="img/campaigns/03.jpg" alt="" style="width: 100%;">
                 </div>
                 <!-- /.box-header -->
                 <!-- form start -->

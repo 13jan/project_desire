@@ -65,9 +65,16 @@ AppAsset::register($this);
         </div>
     </header>
     <!-- end header -->
-    <section id="banner">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <img src="img/slides/1.jpg" alt="">
+            </div>
+        </div>
+    </div>
+    <!-- <section id="banner">
 
-<!-- Slider -->
+
     <div id="main-slider" class="flexslider">
         <ul class="slides">
           <li>
@@ -84,25 +91,11 @@ AppAsset::register($this);
         </div>
     </div>
           </li>
-          <li>
-            <img src="img/slides/2.jpg" alt="" />
-             <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-            <div class="flex-caption">
-                <h3>manufacturing</h3> 
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elitincidunt.</p>  
-            </div>
-             </div>
-        </div>
-    </div>
-          </li>
         </ul>
     </div>
     
-<!-- end slider -->
 
-</section>
+</section> -->
 <section class="jumbobox">
 <div class="container">
     <div class="row">

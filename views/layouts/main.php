@@ -21,15 +21,15 @@ AppAsset::register($this);
 <meta name="description" content="" />
 <meta name="author" content="http://webthemez.com" />
 <!-- css -->
-<link href="css/bootstrap.min.css" rel="stylesheet" />
+<link href="/css/bootstrap.min.css" rel="stylesheet" />
 <link rel="stylesheet" href="simple-line-icons/css/simple-line-icons.css">
-<link href="css/fancybox/jquery.fancybox.css" rel="stylesheet">
-<link href="css/jcarousel.css" rel="stylesheet" />
-<link href="css/flexslider.css" rel="stylesheet" />
-<link href="js/owl-carousel/owl.carousel.css" rel="stylesheet">
-<link rel="stylesheet" href="css/AdminLTE.min.css">
-<link rel="stylesheet" href="css/skins/_all-skins.min.css">
-<link href="css/style.css" rel="stylesheet" />
+<link href="/css/fancybox/jquery.fancybox.css" rel="stylesheet">
+<link href="/css/jcarousel.css" rel="stylesheet" />
+<link href="/css/flexslider.css" rel="stylesheet" />
+<link href="/js/owl-carousel/owl.carousel.css" rel="stylesheet">
+<link rel="stylesheet" href="/css/AdminLTE.min.css">
+<link rel="stylesheet" href="/css/skins/_all-skins.min.css">
+<link href="/css/style.css" rel="stylesheet" />
 <style>.glyphicon{margin-right:5px}.thumbnail{min-height:500px;max-height:500px;margin-bottom:20px;padding:0;-webkit-border-radius:0;-moz-border-radius:0;border-radius:0}.item.list-group-item{float:none;width:100%;background-color:#fff;margin-bottom:10px}.item.list-group-item:nth-of-type(odd):hover,.item.list-group-item:hover{background:#694198}.item.list-group-item .list-group-image{margin-right:10px}.item.list-group-item .thumbnail{margin-bottom:0}.item.list-group-item .caption{padding:9px 9px 0}.item.list-group-item:nth-of-type(odd){background:#eee}.item.list-group-item:before,.item.list-group-item:after{display:table;content:" "}.item.list-group-item img{float:left}.item.list-group-item:after{clear:both}.list-group-item-text{margin:0 0 11px}</style>
  
 <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
@@ -42,30 +42,41 @@ AppAsset::register($this);
 <div id="wrapper" class="home-page">
     <!-- start header -->
     <header>
-        <div class="navbar navbar-default navbar-static-top">
-            <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="index.html"><img src="img/logo.png" alt="logo"/></a>
-                </div>
-                <div class="navbar-collapse collapse ">
-                    <ul class="nav navbar-nav">
-                        <li><a href="/">Главная</a></li> 
-                        <li><a href="/">Кампании</a></li> 
-                        <li><a href="/">Вход</a></li> 
-                        <li><a href="/">Регистрация</a></li>
-                        <li><a href="about_us.html">О нас</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+        <?php
+        NavBar::begin([
+            'brandLabel' => '<img src="/img/logo.png" alt="logo"/>',
+            'brandUrl' => Yii::$app->homeUrl,
+            'options' => [
+                'class' => 'navbar navbar-default navbar-static-top',
+            ],
+        ]);
+        echo Nav::widget([
+            'options' => ['class' => 'navbar-nav navbar-right'],
+            'items' => [
+                ['label' => 'Главная', 'url' => ['/site/index']],
+                ['label' => 'Кампании', 'url' => ['/camp']],
+                ['label' => 'О нас', 'url' => ['/site/about']],
+                Yii::$app->user->isGuest ?
+                            ['label' => 'Войти', 'url' => ['/user/security/login']] :
+                            ['label' => 'Аккаунт (' . Yii::$app->user->identity->username . ')',
+                                'items' => [
+                                    ['label' => 'Мои кампании', 'url' => ['/campaigns']],
+                                    ['label' => 'Мой профиль', 'url' => ['/user/profile/show?id='.Yii::$app->user->identity->getId()]],
+                                    ['label' => 'Настройки', 'url' => ['/user/settings/profile']],
+                                    ['label' => 'Выйти',
+                                        'url' => ['/user/security/logout'],
+                                        'linkOptions' => ['data-method' => 'post']]
+                                    ]
+                            ],
+            ],
+        ]);
+        NavBar::end();
+        ?>
     </header>
     <!-- end header -->
-
+        <?= Breadcrumbs::widget([
+            'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
+        ]) ?>
         <?= $content ?>
         
     <footer>
@@ -146,17 +157,17 @@ AppAsset::register($this);
 <!-- javascript
     ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
-<script src="js/jquery.js"></script>
-<script src="js/jquery.easing.1.3.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/jquery.fancybox.pack.js"></script>
-<script src="js/jquery.fancybox-media.js"></script> 
-<script src="js/portfolio/jquery.quicksand.js"></script>
-<script src="js/portfolio/setting.js"></script>
-<script src="js/jquery.flexslider.js"></script>
-<script src="js/animate.js"></script>
-<script src="js/custom.js"></script>
-<script src="js/owl-carousel/owl.carousel.js"></script>
+<script src="/js/jquery.js"></script>
+<script src="/js/jquery.easing.1.3.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/jquery.fancybox.pack.js"></script>
+<script src="/js/jquery.fancybox-media.js"></script> 
+<script src="/js/portfolio/jquery.quicksand.js"></script>
+<script src="/js/portfolio/setting.js"></script>
+<script src="/js/jquery.flexslider.js"></script>
+<script src="/js/animate.js"></script>
+<script src="/js/custom.js"></script>
+<script src="/js/owl-carousel/owl.carousel.js"></script>
 <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
 
 </body>
