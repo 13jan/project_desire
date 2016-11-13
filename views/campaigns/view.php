@@ -50,5 +50,9 @@ $this->params['breadcrumbs'][] = $this->title;
                 'photo',
             ],
         ]) ?>
+        <?= Html::a('Желания', ['desire/index', 'id' => $id], ['class' => 'btn btn-block btn-warning btn-lg']) ?>
+
+        <br>
+
     </div>
 </div>

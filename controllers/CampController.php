@@ -18,14 +18,14 @@ class CampController extends Controller
 
     /**
      * @inheritdoc
-     */
+    */
     public function behaviors()
     {
         return [
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [
-                    'delete' => ['POST'],
+                    'add' => ['POST'],
                 ],
             ],
         ];
@@ -65,10 +65,16 @@ class CampController extends Controller
 
     public function actionAdd(){
 
-        $request->post();
+        $posts = Yii::$app->request->post();
 
-        return $this->render('index', [
-            'test' => $request->post(),
+        foreach ($posts as $post){
+            if (is_numeric($post)) {
+
+            }
+        }
+
+        return $this->render('add', [
+            'test' => 1
 
         ]);
 

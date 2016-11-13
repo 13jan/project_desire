@@ -7,8 +7,10 @@ use yii\helpers\Html;
 /* @var $model app\models\Campaigns */
 
 
-print_r($test);
+//print_r($test);
 
 ?>
 
-
+<p>
+    Спасибо за участие в пожетвовании.
+</p>

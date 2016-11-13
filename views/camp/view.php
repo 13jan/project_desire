@@ -129,7 +129,7 @@ $desires = (new \yii\db\Query())
                                             <!-- /.box-body -->
                                         </div>
                                         <!-- table end -->
-
+                                        <input type="hidden" name="_csrf" value="<?=Yii::$app->request->getCsrfToken()?>" />
                                     </div>
                                     <!-- /.box-body -->
                                     <div class="box-footer">
