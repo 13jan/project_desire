@@ -120,7 +120,6 @@ AppAsset::register($this);
 <script src="/js/custom.js"></script>
 
 <?php $this->endBody() ?>
-<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
 </body>
 </html>
 <?php $this->endPage() ?>
