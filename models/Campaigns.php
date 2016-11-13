@@ -2,6 +2,7 @@
 
 namespace app\models;
 
+use kartik\date\DatePicker;
 use Yii;
 use yii\behaviors\TimestampBehavior;
 use yii\behaviors\BlameableBehavior;
@@ -24,7 +25,7 @@ use yii\db\ActiveRecord;
  */
 class Campaigns extends \yii\db\ActiveRecord
 {
-
+    public $date_end_display;
     /**
      * @inheritdoc
      */
@@ -46,7 +47,9 @@ class Campaigns extends \yii\db\ActiveRecord
                     'value' => function () {
                         return date('Y-m-d H:i:s');
                     }*/
+
                 ],
+
             ],
             'blameable' => [
                 'class' => BlameableBehavior::className(),
@@ -57,6 +60,17 @@ class Campaigns extends \yii\db\ActiveRecord
         ];
     }
 
+    public function afterFind()
+    {
+        $this->date_end_display = \Yii::t('app', Yii::$app->formatter->asDate($this->date_end));
+    }
+
+    public function beforeSave($insert = true)
+    {
+        $this->date_end = Yii::$app->formatter->asTimestamp($this->date_end_display);
+        return parent::beforeSave($insert);
+    }
+
     /**
      * @inheritdoc
      */
@@ -65,6 +79,7 @@ class Campaigns extends \yii\db\ActiveRecord
         return [
             [['name', 'name_contact', 'contact'], 'required'],
             [['description'], 'string'],
+            ['date_end_display', 'date', 'format' => 'MM/dd/yyyy', 'timestampAttribute' => 'date_end'],
             [['id_creator', 'date_created', 'date_end'], 'integer'],
             [['name', 'name_contact', 'contact', 'photo'], 'string', 'max' => 255],
             [['id_creator'], 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['id_creator' => 'id']],
@@ -85,7 +100,7 @@ class Campaigns extends \yii\db\ActiveRecord
             'name_contact' => 'Контактное лицо',
             'contact' => 'Контактные данные',
             'date_created' => 'Дата создания',
-            'date_end' => 'Дата завершения',
+            'date_end_display' => 'Дата завершения',
             'photo' => 'Фото',
         ];
     }

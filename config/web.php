@@ -65,6 +65,12 @@ $config = [
             ),
         ),
         'db' => require(__DIR__ . '/db.php'),
+        'formatter' => [
+            'class' => 'yii\i18n\Formatter',
+            'dateFormat' => 'MM/dd/yyyy',
+            'datetimeFormat' => 'MM/dd/yyyy HH:MM',
+            'timeFormat' => 'HH:MM',
+        ]
     ],
     'params' => $params,
 ];

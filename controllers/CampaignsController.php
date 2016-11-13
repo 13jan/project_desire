@@ -14,6 +14,7 @@ use yii\filters\VerbFilter;
  */
 class CampaignsController extends Controller
 {
+    public $layout = "main_old";
 
     /**
      * @inheritdoc
@@ -94,6 +95,10 @@ class CampaignsController extends Controller
 
         $model = new Campaigns();
 
+        //$model->load(Yii::$app->request->post());
+        //$model->date_end = Yii::$app->formatter->asTimestamp($model->date_end);
+
+        //if ($model->load($model->save()) {
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['/desire/index', 'id' => $model->id]);
         } else {

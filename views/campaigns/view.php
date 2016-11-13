@@ -43,16 +43,15 @@ $this->params['breadcrumbs'][] = $this->title;
                     'value' => Yii::$app->formatter->asDate($model->date_created)
                 ],
                 [
-                    'attribute'=>'date_end',
+                    'attribute'=>'date_end_display',
                     'label' => 'Дата завершения',
-                    'value' => Yii::$app->formatter->asDate($model->date_end)
                 ],
                 'photo',
             ],
         ]) ?>
+
         <?= Html::a('Желания', ['desire/index', 'id' => $id], ['class' => 'btn btn-block btn-warning btn-lg']) ?>
 
         <br>
-
     </div>
 </div>

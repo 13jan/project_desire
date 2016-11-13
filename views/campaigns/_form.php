@@ -3,6 +3,7 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+use kartik\date\DatePicker;
 
 
 /* @var $this yii\web\View */
@@ -22,11 +23,23 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'name_contact')->textInput(['maxlength' => true]) ?>
 
+
     <?= $form->field($model, 'contact')->textInput(['maxlength' => true]) ?>
 
     <? //= $form->field($model, 'date_created')->textInput() ?>
 
-    <?= $form->field($model, 'date_end')->textInput() ?>
+    <?//= $form->field($model, 'date_end_display')->textInput() ?>
+
+
+    <?= $form->field($model, 'date_end_display')->widget(DatePicker::className(),[
+        'name' => 'check_issue_date',
+        'value' => date('mm/dd/yyyy', strtotime('+2 days')),
+        'options' => ['placeholder' => 'Выберите дату завершения кампании'],
+        'pluginOptions' => [
+            'format' => 'mm/dd/yyyy',
+            'todayHighlight' => true,
+        ],
+    ]) ?>
 
     <?= $form->field($model, 'photo')->textInput(['maxlength' => true]) ?>
 	

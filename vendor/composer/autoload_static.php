@@ -25,6 +25,11 @@ class ComposerStaticInit15da5d55d909d9f60cd24149529ce509
             'yii\\authclient\\' => 15,
             'yii\\' => 4,
         ),
+        'k' => 
+        array (
+            'kartik\\date\\' => 12,
+            'kartik\\base\\' => 12,
+        ),
         'd' => 
         array (
             'dektrium\\user\\' => 14,
@@ -79,6 +84,14 @@ class ComposerStaticInit15da5d55d909d9f60cd24149529ce509
         'yii\\' => 
         array (
             0 => __DIR__ . '/..' . '/yiisoft/yii2',
+        ),
+        'kartik\\date\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-widget-datepicker',
+        ),
+        'kartik\\base\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-krajee-base',
         ),
         'dektrium\\user\\' => 
         array (
