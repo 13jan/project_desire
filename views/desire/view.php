@@ -64,9 +64,23 @@ $this->params['breadcrumbs'][] = $this->title;
             </tr>
             <tr>
               <td>1</td>
-              <td><a href="/ссылка-на-юзера">user_name</a></td>
+              <td><a href="/ссылка-на-пользователя">Алексей</a></td>
               <td>10</td>
-              <td><input class="form-control" type="number" max="10" min="0" value="0"></td>
+              <td><input class="form-control" type="number" max="10" min="0" value="10" disabled></td>
+              <td><button class="btn btn-sm btn-success" disabled>Подтвердить</button></td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td><a href="/ссылка-на-пользователя">Владимир</a></td>
+              <td>5</td>
+              <td><input class="form-control" type="number" max="5" min="0" value="0"></td>
+              <td><button class="btn btn-sm btn-success">Подтвердить</button></td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td><a href="/ссылка-на-пользователя">Юлия</a></td>
+              <td>5</td>
+              <td><input class="form-control" type="number" max="5" min="0" value="0"></td>
               <td><button class="btn btn-sm btn-success">Подтвердить</button></td>
             </tr>
           </table>
