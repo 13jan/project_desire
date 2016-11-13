@@ -27,7 +27,6 @@ AppAsset::register($this);
 <link href="/css/fancybox/jquery.fancybox.css" rel="stylesheet">
 <link href="/css/jcarousel.css" rel="stylesheet" />
 <link href="/css/flexslider.css" rel="stylesheet" />
-<link href="/js/owl-carousel/owl.carousel.css" rel="stylesheet">
 <link rel="stylesheet" href="/css/AdminLTE.min.css">
 <link rel="stylesheet" href="/css/skins/_all-skins.min.css">
 <link href="/css/style.css" rel="stylesheet" />
@@ -82,62 +81,13 @@ AppAsset::register($this);
         <?= $content ?>
         
     <footer>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-3">
-                <div class="widget">
-                    <h5 class="widgetheading">Our Contact</h5>
-                    <address>
-                    <strong>Industry company Inc</strong><br>
-                    JC Main Road, Near Silnile tower<br>
-                     Pin-21542 NewYork US.</address>
-                    <p>
-                        <i class="icon-phone"></i> (123) 456-789 - 1255-12584 <br>
-                        <i class="icon-envelope-alt"></i> email@domainname.com
-                    </p>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="widget">
-                    <h5 class="widgetheading">Quick Links</h5>
-                    <ul class="link-list">
-                        <li><a href="#">Latest Events</a></li>
-                        <li><a href="#">Terms and conditions</a></li>
-                        <li><a href="#">Privacy policy</a></li>
-                        <li><a href="#">Career</a></li>
-                        <li><a href="#">Contact us</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="widget">
-                    <h5 class="widgetheading">Latest posts</h5>
-                    <ul class="link-list">
-                        <li><a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></li>
-                        <li><a href="#">Pellentesque et pulvinar enim. Quisque at tempor ligula</a></li>
-                        <li><a href="#">Natus error sit voluptatem accusantium doloremque</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="widget">
-                    <h5 class="widgetheading">Recent News</h5>
-                    <ul class="link-list">
-                        <li><a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></li>
-                        <li><a href="#">Pellentesque et pulvinar enim. Quisque at tempor ligula</a></li>
-                        <li><a href="#">Natus error sit voluptatem accusantium doloremque</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
     <div id="sub-footer">
         <div class="container">
             <div class="row">
                 <div class="col-lg-6">
                     <div class="copyright">
                         <p>
-                            <span>&copy; Industry 2018 All right reserved. By </span><a href="http://webthemez.com" target="_blank">WebThemez</a>
+                            <span>&copy; Подари мечту (2016). Разработано в </span><a href="https://chsu.ru" target="_blank">ЧГУ</a>
                         </p>
                     </div>
                 </div>
