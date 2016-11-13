@@ -108,9 +108,7 @@ AppAsset::register($this);
 <a href="#" class="scrollup"><i class="fa fa-angle-up active"></i></a>
 <!-- javascript
     ================================================== -->
-<!-- Placed at the end of the document so the pages load faster -->
-<script src="/js/jquery.js"></script>
-<script src="/js/bootstrap.min.js"></script>
+
 <script src="/js/jquery.fancybox.pack.js"></script>
 <script src="/js/jquery.fancybox-media.js"></script> 
 <script src="/js/portfolio/jquery.quicksand.js"></script>
@@ -119,9 +117,10 @@ AppAsset::register($this);
 <script src="/js/animate.js"></script>
 <script src="/js/custom.js"></script>
 <script src="/js/owl-carousel/owl.carousel.js"></script>
-<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="/js/custom.js"></script>
 
 <?php $this->endBody() ?>
+<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
 </body>
 </html>
 <?php $this->endPage() ?>
